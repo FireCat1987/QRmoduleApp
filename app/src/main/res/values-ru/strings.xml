@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">QRmodule</string>
+    <string name="permission_camera_rationale">туп к камере необходим для обнаружения и считывания штрих-кода.</string>
+    <string name="no_camera_permission">Это приложение не может работать, потому что у него нет разрешения камеры. Приложение завершает свою работу.</string>
+    <string name="low_storage_error">Зависимости от детектора лица не могут быть загружены из-за недостаточного места храниения на устройстве</string>
+    <string name="barcode_error">Ошибка чтения штрих-кода: %1$s</string>
+    <string name="choose_formats">Выберите форматы</string>
+    <string name="ok_button">OK</string>
+    <string name="cancel_button" tools:ignore="ButtonCase">ОТМЕНА</string>
+    <string name="select_camera">Выберите камеру</string>
+    <string name="flash_on">Вспышка [ВКЛ]</string>
+    <string name="flash_off">Вспышка [ВЫКЛ]</string>
+    <string name="auto_focus_on">Автофокус [ВКЛ]</string>
+    <string name="auto_focus_off">Автофокус [ВЫКЛ]</string>
+    <string name="formats">Форматы</string>
+    <string name="scanner_activity">Сканирование…</string>
+    <string name="bar_code_id">Результат сканирования</string>
+    <string name="scan_button">Сканировать</string>
+    <string name="front_camera">Передняя сторона</string>
+    <string name="back_camera">Задняя сторона</string>
+    <string name="exit">Выход</string>
+</resources>
