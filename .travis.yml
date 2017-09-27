@@ -29,10 +29,13 @@ before_install:
 script:
   - ./gradlew clean build
 after_success:
+  - ls
   - cp $TRAVIS_BUILD_DIR/keystore1.jks $HOME
   - cd app/build/outputs/apk/
+  - ls
   - jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore $HOME/keystore1.jks -storepass $storepass -keypass $keypass app-release-unsigned.apk key1
   - jarsigner -verify app-release-unsigned.apk
   - ${ANDROID_HOME}/build-tools/26.0.0/zipalign -v 4 app-release-unsigned.apk qrmodule.apk
   - cp qrmodule.apk $HOME
+  - cd $HOME
   - sh ./push-apk.sh
