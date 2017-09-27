@@ -40,6 +40,8 @@ before_script:
 - adb shell input keyevent 82 &
 script:
 - "./gradlew clean build connectedCheck -PdisablePreDex --stacktrace"
+after_success:
+- sh set_tags.sh
 before_deploy:
 - cp $TRAVIS_BUILD_DIR/keystore1.jks $HOME
 - cd app/build/outputs/apk/
@@ -50,10 +52,16 @@ before_deploy:
 deploy:
   provider: releases
   file: qrmodule.apk
+  file_glob: "true"
   skip_cleanup: true
   on:
     repo: FireCat1987/QRmoduleApp
-    tags: true
-    all_branches: true
+    branch: master
   api_key:
     secure: FBKypfIPIQmagIvQJgPE+4RTJd4sKuSHBCNEcJwbeOAk53EQHNp8C0e3eUjR6MAf/mTkPXJhV+kvzdc5Naie3FfUmTXnxP8X7/iBQUrq6OX47zP+RbgoXm8zA9Rs6GEQBLX0ouR5a5IxkHoGYMOk+pyej9j79jxWilcpv2mhQ1cvM5tj8clapL+2WQvFLwRG+gM27uDJp29Dw6kvBwIhOdVXQYGtZ3FdIQ5GsCBuUkOYpT1P3/G2O74+QaSOgUrFI0JsoME3gyO7eusxA9qKZu6GOWKbGLI3hOG6waRELWBPNT4uhOBqtxk0XbA7IwLG1z6lF2W04CO0mATKBFb3Oi3JCCSp5xUukRXRs+c+aVpedRJ9+147m4z6XKXlvnSJqkxGawcNfKy4mgRwVmILiAyTNFQmCGgyY5gjwglhTp9mlf1jJ6heerw7Yw/lWnY/jp7iG6nDiI3EM3YM672vyqOKzSf7vGvZDvYuRF1hF9ZQlcBFVx61piSZ4/9+PnCwZPYRfBlHvlwvPI9agBTlLaQhTAPQmmilwEbJkuWoh2gfSdYw9s7KRZPvryWCAOXQfxapf848GC+S5aVnN+LQIw5QrxVWzKWImB9s1g+Yr9g8CP3rWRgv1Ypff/442sG3coO0qiMvACZGRLAjnAgP0fwrWU7o44tyABbAeAqei6I=
+cache:
+  directories:
+  - "$HOME/.m2"
+  - "$HOME/.gradle"
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
