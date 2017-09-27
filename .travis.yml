@@ -37,5 +37,6 @@ after_success:
   - jarsigner -verify app-release-unsigned.apk
   - ${ANDROID_HOME}/build-tools/26.0.0/zipalign -v 4 app-release-unsigned.apk qrmodule.apk
   - cp qrmodule.apk $HOME
-  - cd $HOME
+  - cd $TRAVIS_BUILD_DIR
+  - ls
   - sh ./push-apk.sh
