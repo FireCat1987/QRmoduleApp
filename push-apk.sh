@@ -1,12 +1,11 @@
 #!/bin/sh
 
 # Checkout gh-pages branch
-cd $HOME
 git clone https://github.com/FireCat1987/QRmoduleApp.git --branch gh-pages --single-branch repo_ghpages
 cd repo_ghpages
 
 # Copy newly created APK into the target directory
-mv $HOME/qrmodule.apk ./build
+mv $TRAVIS_BUILD_DIR/qrmodule.apk ./build
 
 # Setup git for commit and push
 git config --global user.email "travis@travis-ci.org"
