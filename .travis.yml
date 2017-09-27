@@ -36,7 +36,7 @@ after_success:
   - jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore $HOME/keystore1.jks -storepass $storepass -keypass $keypass app-release-unsigned.apk key1
   - jarsigner -verify app-release-unsigned.apk
   - ${ANDROID_HOME}/build-tools/26.0.0/zipalign -v 4 app-release-unsigned.apk qrmodule.apk
-  - cp qrmodule.apk $HOME
+  - cp qrmodule.apk $TRAVIS_BUILD_DIR
   - cd $TRAVIS_BUILD_DIR
   - ls
   - sh ./push-apk.sh
