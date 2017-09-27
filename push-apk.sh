@@ -5,6 +5,8 @@ git clone https://github.com/FireCat1987/QRmoduleApp.git --branch gh-pages --sin
 cd repo_ghpages
 
 # Copy newly created APK into the target directory
+ls
+ls $TRAVIS_BUILD_DIR
 mv $TRAVIS_BUILD_DIR/qrmodule.apk ./build
 
 # Setup git for commit and push
