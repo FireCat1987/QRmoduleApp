@@ -4,7 +4,7 @@ layout: default
 
 [QRmodule](/build/qrmodule.apk) Простое приложение позволяющие считывать различные штрих-коды.
 
-[![Build Status](https://travis-ci.org/FireCat1987/QRmoduleApp.svg?branch=master)](https://travis-ci.org/FireCat1987/QRmoduleApp)
+[![Build Status](https://travis-ci.org/avsharapov/QRmoduleApp.svg?branch=master)](https://travis-ci.org/avsharapov/QRmoduleApp)
 
 На данный момент реализовано:
 - минимальный функционал чтения различных штрих-кодов
